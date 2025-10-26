@@ -8,7 +8,7 @@ gologin_pic = "./res/gologin.png"
 profile_pic = "./res/profile.png"
 confidence = 0.8
 cycle = 5
-click_count = 5
+click_count = 10
 
 
 def human_move_click(x, y, _from = -3, _to = 3):
@@ -54,6 +54,7 @@ def on_click()-> bool:
             for _ in range(click_count):
                 sleep(uniform(0.2,0.4))
                 human_move_click(center_x, center_y, randint(-30, 0), randint(0, 30))
+                pyautogui.hotkey('ctrl', '1')
             
             for _ in range(click_count):
                 pyautogui.hotkey('ctrl', '2')
